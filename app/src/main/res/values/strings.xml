@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">PizzaBut</string>
+    <string name="app_name">Pizza But</string>
+    <string name="app_mussarela">Mussarela</string>
+    <string name="app_calabresa">Calabresa</string>
+    <string name="app_portuguesa">Portuguesa</string>
+    <string name="app_calc_price">Calcular Preço</string>
+    <string name="app_borda_recheada">Borda Recheada</string>
 </resources>
