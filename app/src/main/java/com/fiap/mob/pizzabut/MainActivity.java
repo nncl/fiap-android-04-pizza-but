@@ -3,11 +3,13 @@ package com.fiap.mob.pizzabut;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
+public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, AdapterView.OnItemSelectedListener {
 
     // interface => say the rules => CONTRACT
 
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
     private RadioGroup rg;
     private CheckBox chkBorda;
+    private Spinner spinPaymentMethods;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +30,11 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
         rg = (RadioGroup) findViewById(R.id.radiopizzaGroup);
         chkBorda = (CheckBox) findViewById(R.id.checkBordaRecheada);
+        spinPaymentMethods = (Spinner) findViewById(R.id.payment_spinner);
 
         // 2. hey app, start listening any check changes...
         rg.setOnCheckedChangeListener(this); // this => this activity
+        spinPaymentMethods.setOnItemSelectedListener(this);
     }
 
     /**
@@ -70,5 +75,16 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
             chkBorda.setEnabled(true);
         }
 
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int pos, long l) {
+        Object selectedPayment = parent.getItemAtPosition(pos);
+        Toast.makeText(this, "You've selected " + selectedPayment, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+        Toast.makeText(this, "There is nothing selected", Toast.LENGTH_LONG).show();
     }
 }
