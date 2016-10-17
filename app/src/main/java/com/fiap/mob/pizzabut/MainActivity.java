@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         rg = (RadioGroup) findViewById(R.id.radiopizzaGroup);
         chkBorda = (CheckBox) findViewById(R.id.checkBordaRecheada);
 
-        // 2.
+        // 2. hey app, start listening any check changes...
         rg.setOnCheckedChangeListener(this); // this => this activity
     }
 

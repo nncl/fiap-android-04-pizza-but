@@ -5,4 +5,9 @@
     <string name="app_portuguesa">Portuguesa</string>
     <string name="app_calc_price">Calcular Preço</string>
     <string name="app_borda_recheada">Borda Recheada</string>
+    <string-array name="app_payment_methods">
+        <item>Credit Card</item>
+        <item>Cash</item>
+        <item>VR</item>
+    </string-array>
 </resources>
